@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Noto Sans SC", system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #090909;
+}
+
+.font-display {
+  font-family: "ZCOOL KuaiLe", "Noto Sans SC", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.page-noise {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+}
+
+.receipt-card {
+  background: linear-gradient(145deg, rgba(255, 245, 222, 0.92), rgba(255, 228, 156, 0.7));
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+.draw-button {
+  background: radial-gradient(circle at top, #fff3c4, #ffd34d 65%, #ffb000);
+  box-shadow:
+    0 18px 50px rgba(255, 211, 77, 0.25),
+    0 0 0 1px rgba(255, 211, 77, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.draw-button:active {
+  transform: translateY(2px) scale(0.99);
+  box-shadow:
+    0 12px 30px rgba(255, 211, 77, 0.2),
+    0 0 0 1px rgba(255, 211, 77, 0.22);
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide {
+  animation: slide 520ms ease both;
+}
